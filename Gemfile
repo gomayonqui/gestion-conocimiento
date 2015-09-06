@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
+gem 'rails-i18n', '~> 4.0.5'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -36,6 +37,7 @@ gem 'haml-rails'
 
 gem 'devise', '~> 3.4.1'
 gem 'devise-i18n', '~> 0.12.0'
+gem 'devise-bootstrap-views', '~> 0.0.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
