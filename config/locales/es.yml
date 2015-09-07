@@ -1,10 +1,17 @@
 es:
+  attributes:
+    created_at: "Creado"
+    updated_at: "Actualizado"
   activerecord:
     models:
       user: 'Usuario'
+      country: 'País'
     attributes:
       user:
         email: 'Correo electrónico'
         password: 'Contraseña'
         password_confirmation: 'Confirmación de contraseña'
         remember_me: 'Recordarme'
+      country:
+        name: 'Nombre'
+        flag: 'Bandera'

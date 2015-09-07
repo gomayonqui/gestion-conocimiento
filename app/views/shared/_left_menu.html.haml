@@ -1,4 +1,5 @@
 .well.sidebar-nav.hidden-print
   %h3 Menú
   %ul.nav.nav-list
+    %li= link_to 'Aministrar países', countries_path
     %li= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete
