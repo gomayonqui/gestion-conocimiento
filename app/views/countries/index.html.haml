@@ -13,7 +13,7 @@
     - @countries.each do |country|
       %tr
         %td= link_to country.id, country_path(country)
-        %td= country.name
+        %td= link_to country.name, programs_path(country_id: country)
         %td= image_tag country.flag
         %td=l country.created_at
         %td

@@ -1,0 +1,13 @@
+= form_for @program, html: { class: "form form-horizontal program" } do |f|
+  .form-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name, class: 'form-control', required: true
+    = error_span(@program[:name])
+  .form-group
+    = f.label :country_id, class: 'control-label'
+    .controls
+      = f.select :country_id, options_from_collection_for_select(Country.all, :id, :name, @program.country_id), { include_blank: false }, { class: 'form-control', required: true }
+    = error_span(@program[:country_id])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), programs_path, :class => 'btn btn-default'

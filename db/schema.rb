@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907001554) do
+ActiveRecord::Schema.define(version: 20150907015416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,25 @@ ActiveRecord::Schema.define(version: 20150907001554) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "programs", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "programs", ["country_id"], name: "index_programs_on_country_id", using: :btree
+
+  create_table "solutions", force: :cascade do |t|
+    t.integer  "kind"
+    t.text     "content"
+    t.integer  "program_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "solutions", ["program_id"], name: "index_solutions_on_program_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -42,4 +61,6 @@ ActiveRecord::Schema.define(version: 20150907001554) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "programs", "countries"
+  add_foreign_key "solutions", "programs"
 end

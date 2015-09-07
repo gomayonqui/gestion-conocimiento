@@ -1,11 +1,16 @@
 es:
+  procedure: 'Procedimiento'
+  error:     'Errores'
   attributes:
-    created_at: "Creado"
-    updated_at: "Actualizado"
+    name: 'Nombre'
+    created_at: 'Creado'
+    updated_at: 'Actualizado'
   activerecord:
     models:
       user: 'Usuario'
       country: 'País'
+      program: 'Aplicación'
+      solution: 'Solución'
     attributes:
       user:
         email: 'Correo electrónico'
@@ -13,5 +18,10 @@ es:
         password_confirmation: 'Confirmación de contraseña'
         remember_me: 'Recordarme'
       country:
-        name: 'Nombre'
         flag: 'Bandera'
+      program:
+        country_id: 'País'
+      solution:
+        kind: 'Tipo'
+        content: 'Contenido'
+        program_id: 'Aplicación'
