@@ -9,7 +9,7 @@
 %p
   %strong= model_class.human_attribute_name(:content) + ':'
   %br
-  = @solution.content
+  = @solution.content.html_safe
 %p
   %strong= model_class.human_attribute_name(:program_id) + ':'
   %br
