@@ -39,9 +39,14 @@ gem 'devise', '~> 3.4.1'
 gem 'devise-i18n', '~> 0.12.0'
 gem 'devise-bootstrap-views', '~> 0.0.5'
 
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
