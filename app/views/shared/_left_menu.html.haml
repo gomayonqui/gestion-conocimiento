@@ -1,7 +1,7 @@
 .well.sidebar-nav.hidden-print
   %h3 Menú
   %ul.nav.nav-list
-    %li= link_to 'Administrar países', countries_path
-    %li= link_to 'Administrar Aplicaciones', programs_path
-    %li= link_to 'Administrar Soluciones', solutions_path
+    %li= link_to 'Administrar países', admin_countries_path
+    %li= link_to 'Administrar Aplicaciones', admin_programs_path
+    %li= link_to 'Administrar Soluciones', admin_solutions_path
     %li= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete

@@ -1,8 +1,8 @@
-= form_for @solution, html: { class: "form form-horizontal solution" } do |f|
+= form_for [:admin, @solution], html: { class: "form form-horizontal solution" } do |f|
   .form-group
     = f.label :content, class: 'control-label'
     .controls
       = f.cktext_area :content, class: 'form-control ckeditor', required: true
     = error_span(@solution[:content])
   = f.submit nil,class: 'btn btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), solutions_path, :class => 'btn btn-default'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_solutions_path, :class => 'btn btn-default'

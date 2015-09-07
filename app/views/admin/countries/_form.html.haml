@@ -1,13 +1,14 @@
-= form_for @country, html: { class: "form form-horizontal country" } do |f|
+= form_for [:admin, @country], html: { class: "form form-horizontal country" } do |f|
   .form-group
     = f.label :name, class: 'control-label'
     .controls
       = f.text_field :name, class: 'form-control', required: true
     = error_span(@country[:name])
   .form-group
+    = image_tag(@country.flag) if @country.flag
     = f.label :flag, class: 'control-label'
     .controls
-      = f.file_field :flag, class: 'form-control', required: true
+      = f.file_field :flag, class: 'form-control'
     = error_span(@country[:flag])
   = f.submit nil,class: 'btn btn-primary'
-  = link_to t('.cancel', :default => t("helpers.links.cancel")), countries_path, :class => 'btn btn-default'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_countries_path, :class => 'btn btn-default'

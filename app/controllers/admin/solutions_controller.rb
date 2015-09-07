@@ -1,4 +1,4 @@
-class SolutionsController < ApplicationController
+class Admin::SolutionsController < ApplicationController
   before_action :set_solution, only: [:show, :edit, :update, :destroy]
 
   # GET /solutions
@@ -32,7 +32,7 @@ class SolutionsController < ApplicationController
 
     respond_to do |format|
       if @solution.save
-        format.html { redirect_to @solution, notice: 'Solution was successfully created.' }
+        format.html { redirect_to [:admin, @solution], notice: 'Solution was successfully created.' }
         format.json { render :show, status: :created, location: @solution }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class SolutionsController < ApplicationController
   def update
     respond_to do |format|
       if @solution.update(solution_params)
-        format.html { redirect_to @solution, notice: 'Solution was successfully updated.' }
+        format.html { redirect_to [:admin, @solution], notice: 'Solution was successfully updated.' }
         format.json { render :show, status: :ok, location: @solution }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class SolutionsController < ApplicationController
   def destroy
     @solution.destroy
     respond_to do |format|
-      format.html { redirect_to solutions_url, notice: 'Solution was successfully destroyed.' }
+      format.html { redirect_to admin_solutions_url, notice: 'Solution was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
