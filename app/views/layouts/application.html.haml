@@ -19,26 +19,7 @@
 
 
   %body
-    %header.container
-      .row
-        .col-lg-1
-        .col-lg-10
-          .row
-            .col-lg-8
-              %p.header-title
-                Gestion de conocimiento
-              %p
-                %ul.list-inline
-                  %li
-                    = link_to countries_path, class: 'btn btn-default' do
-                      %i.fa.fa-home
-                  = yield :menu_options
-              %p
-                - if current_user
-                  = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete
-            .col-lg-4.header-app-name
-              %p 0911
-        .col-lg-1
+    = render 'shared/header'
 
     .container
       .row
@@ -48,5 +29,4 @@
           = yield
         .col-lg-1
 
-    %footer.footer
-      = image_tag('argos.png', alt: 'Logo argos')
+    = render 'shared/footer'

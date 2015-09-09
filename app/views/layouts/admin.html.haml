@@ -19,12 +19,7 @@
 
 
   %body
-    .navbar.navbar-default.navbar-static-top
-      .container
-        .row
-          .col-md-6
-          .col-md-4
-          .col-md-2
+    = render 'shared/header'
 
     .container
       .row
@@ -34,5 +29,5 @@
           = bootstrap_flash
           = yield
         .col-lg-2
-      %footer
-        %p &copy; Company 2015
+
+    = render 'shared/footer'

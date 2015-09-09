@@ -1,0 +1,20 @@
+%header.container
+  .row
+    .col-lg-1
+    .col-lg-10.main-content
+      .row
+        .col-lg-8
+          %p.header-title
+            Gestion de conocimiento
+          - if current_user && !current_user.admin?
+            %p
+              %ul.list-inline
+                %li
+                  = link_to countries_path, class: 'btn btn-default' do
+                    %i.fa.fa-home
+                = yield :menu_options
+            %p
+              = link_to 'Cerrar sesión', destroy_user_session_path, method: :delete
+        .col-lg-4.header-app-name
+          %p 0911
+    .col-lg-1
