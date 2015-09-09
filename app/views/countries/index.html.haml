@@ -1,0 +1,9 @@
+.countries-info
+  .row
+    .col-lg-4.country-icon
+      %i.fa.fa-list-alt.fa-5x
+    .col-lg-8
+      - @countries.each do |country|
+        %ul.list-inline
+          %li= image_tag country.flag
+          %li.country-name= link_to country.name, programs_path(country_id: country)

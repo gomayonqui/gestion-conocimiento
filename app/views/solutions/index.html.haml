@@ -1,0 +1,16 @@
+%h1= @program.name
+%h2= t params[:program_type]
+= @solution.content.html_safe if @solution.content
+
+= content_for :menu_options do
+  %li
+    = link_to programs_path(country_id: params[:country_id]), class: 'btn btn-default' do
+      %i.fa.fa-chevron-left
+  %li
+    = link_to solutions_path(program_id: params[:program_id], program_type: 'procedure', country_id: params[:country_id]), class: 'btn btn-default' do
+      %i.fa.fa-external-link
+        Procedimientos
+  %li
+    = link_to solutions_path(program_id: params[:program_id], program_type: 'error', country_id: params[:country_id]), class: 'btn btn-default' do
+      %i.fa.fa-warning
+        Errores conocidos

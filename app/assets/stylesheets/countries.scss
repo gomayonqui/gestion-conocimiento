@@ -1,3 +1,18 @@
 // Place all the styles related to the Countries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.countries-info{
+  border-style: solid;
+  border-width: 2px;
+  border-color: #00b2ee;
+  margin: 50px 0px;
+  border-left: none;
+  border-right: none;
+  padding: 30px;
+}
+
+
+.country-icon{
+  color: #3f4752;
+  text-align: center;
+}

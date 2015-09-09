@@ -1,0 +1,18 @@
+.countries-info
+  .row
+    .col-lg-4.cement-image
+      = image_tag 'cementos_argos'
+    .col-lg-8
+      = form_tag solutions_path, { method: :get, class: 'form-horizontal' } do
+        .form-group
+          = label_tag :program_id, 'Aplicación', class: 'col-sm-2 control-label'
+          .col-sm-10
+            = select_tag :program_id, options_from_collection_for_select(@programs, :id, :name), class: 'form-control'
+        .form-group
+          = label_tag :program_type, 'Información', class: 'col-sm-2 control-label'
+          .col-sm-10
+            = select_tag :program_type, options_for_select([['Procedimiento', 'procedure'], ['Errores Conocidos', 'error']]), class: 'form-control'
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            = hidden_field_tag :country_id, params[:country_id]
+            = submit_tag "Ver", class: 'btn btn-info'

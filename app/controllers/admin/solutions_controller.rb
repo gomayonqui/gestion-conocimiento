@@ -1,4 +1,4 @@
-class Admin::SolutionsController < ApplicationController
+class Admin::SolutionsController < Admin::AdminController
   before_action :set_solution, only: [:show, :edit, :update, :destroy]
 
   # GET /solutions

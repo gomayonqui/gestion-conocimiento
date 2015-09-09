@@ -1,6 +1,6 @@
 es:
   procedure: 'Procedimiento'
-  error:     'Errores'
+  error:     'Errores conocidos'
   attributes:
     name: 'Nombre'
     created_at: 'Creado'
